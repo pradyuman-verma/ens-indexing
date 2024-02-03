@@ -19,3 +19,8 @@ Resources:
         Handler: src/handlers/ensResgistrarController/NameRenewedHandler/index.NameRenewedHandler
       - Event: OwnershipTransferred(address indexed,address indexed)
         Handler: src/handlers/ensResgistrarController/OwnershipTransferredHandler/index.OwnershipTransferredHandler
+
+  - Name: ensRegistrarControllerApi
+    Type: api
+    Slug: balance
+    Handler: src/handlers/api/index.apiHandler
