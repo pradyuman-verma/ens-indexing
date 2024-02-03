@@ -16,7 +16,7 @@ export const NameRegisteredHandler = async (
 
   name = name.toString();
   label = label.toString();
-  owner = owner.toString();
+  owner = owner.toString().toLowerCase();
   baseCost = baseCost.toString();
   premium = premium.toString();
   expires = Number(expires.toString());
