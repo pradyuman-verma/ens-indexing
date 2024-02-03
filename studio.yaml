@@ -1,0 +1,21 @@
+name: " ens indexing"
+description: "\t"
+startBlock: latest
+userId: XXXXXXXX-XXXX-XXXX-XXXXXXXX-XXXXXXXX
+projectId: XXXXXXXX-XXXX-XXXX-XXXXXXXX-XXXXXXXX
+network: Ethereum
+user: dev_user
+schema:
+  file: ./studio.schema.ts
+Resources:
+  - Name: ensRegistrarController
+    Abi: src/abis/ensResgistrarController.json
+    Type: contract/event
+    Address: "0x253553366Da8546fC250F225fe3d25d0C782303b"
+    Triggers:
+      - Event: NameRegistered(string,bytes32 indexed,address indexed,uint256,uint256,uint256)
+        Handler: src/handlers/ensResgistrarController/NameRegisteredHandler/index.NameRegisteredHandler
+      - Event: NameRenewed(string,bytes32 indexed,uint256,uint256)
+        Handler: src/handlers/ensResgistrarController/NameRenewedHandler/index.NameRenewedHandler
+      - Event: OwnershipTransferred(address indexed,address indexed)
+        Handler: src/handlers/ensResgistrarController/OwnershipTransferredHandler/index.OwnershipTransferredHandler
